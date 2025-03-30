@@ -1,44 +1,277 @@
-@import './base.css';
+@font-face {
+  font-family: 'Intera';
+  src: url('./Inter-VariableFont.ttf') format('truetype');
+}
+
+* {
+  box-sizing: border-box;
+}
 
 html,
 body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    background: rgb(64, 139, 180);
-    background: radial-gradient(circle, rgba(64, 139, 180, 1) 0%, rgba(27, 72, 96, 1) 63%, rgba(16, 56, 77, 1) 78%, rgba(4, 39, 57, 1) 100%);
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(64, 139, 180);
+  background: radial-gradient(circle, rgba(64, 139, 180, 1) 0%, rgba(27, 72, 96, 1) 63%, rgba(16, 56, 77, 1) 78%, rgba(4, 39, 57, 1) 100%);
 }
 
 .container {
-    display: flex;
-    justify-content: center;
-    padding-bottom: 25vh;
-    width: 100%;
-    height: 100%;
+  display: grid;
+  grid-template-columns: 2.7fr 1.3fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". .";
 
+}
+
+.container-bot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background: rgb(64, 139, 180);
+  background: radial-gradient(circle, rgba(64, 139, 180, 1) 0%, rgba(27, 72, 96, 1) 63%, rgba(16, 56, 77, 1) 78%, rgba(4, 39, 57, 1) 100%);
 }
 
 .figure {
-    display: flex;
-    justify-content: space-evenly;
-    width: 550px;
-    height: 250px;
-    border: 25px #FFFFFF solid;
-    border-radius: 80vh;
-    box-shadow: 0px 0px 20px 0px #ffffff;
+  display: flex;
+  justify-content: space-evenly;
+  width: 550px;
+  height: 250px;
+  border: 25px #FFFFFF solid;
+  border-radius: 80vh;
+  box-shadow: 0px 0px 20px 0px #ffffff;
 }
 
 .eye {
-    align-self: center;
-    width: 20%;
-    height: 60%;
-    border-radius: 50vh;
-    background-color: #FFFFFF;
-    border: 5px #FFFFFF solid;
-    border-radius: 80vh;
-    box-shadow: 0px 0px 20px 0px #ffffff;
+  align-self: center;
+  width: 20%;
+  border-radius: 50vh;
+  background-color: #FFFFFF;
+  border: 5px #FFFFFF solid;
+  border-radius: 80vh;
+  box-shadow: 0px 0px 20px 0px #ffffff;
+  animation-name: eyes;
+  animation-duration: 0.6s;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
 }
+
+
+@keyframes eyes {
+  from {
+    height: 60%;
+  }
+
+  to {
+    height: 58%;
+  }
+}
+
+
+.options {
+  color: #FFFFFF;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  bottom: 15vh;
+  /* 10% de la altura de la pantalla */
+  width: 100%;
+}
+
+.option-text {
+  color: #FFFFFF;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  bottom: 8vh;
+  /* 10% de la altura de la pantalla */
+  width: 100%;
+  font-family: "Intera";
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.oneandtwo {
+  display: flex;
+  width: 200px;
+  justify-content: space-evenly;
+}
+
+.voice {
+  background-color: #10384D;
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.message {
+  background-color: #10384D;
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-chat {
+  width: 100%;
+  height: 100vh;
+  background: rgba(13, 28, 36, 0.63);
+  display: inline-block;
+  align-content: end;
+}
+
+.container-message-chat {
+  width: 100%;
+  height: 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 1.5vh;
+  padding-left: 2.3vw;
+  padding-right: 2.3vw;
+  margin-top: 10px;
+}
+
+.message-chat {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.message-chat form {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.chat {
+  background-color: #042739;
+  width: 100%;
+  height: 100%;
+  border: 0.5px #042739 solid;
+  border-radius: 10px;
+  padding: 5px;
+  box-shadow: 1px 4px 15px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+}
+
+.message-chat input {
+  all: unset;
+  font-family: "Intera";
+  font-weight: 500;
+  font-size: small;
+  color: #FFFFFF;
+  padding-left: 6px;
+  background-color: rgba(4, 39, 57, 0.5);
+  border: 0.5px rgb(4, 39, 57) solid;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  
+  box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.5);
+}
+
+.message-chat input::placeholder{
+  font-family: "Intera";
+  font-weight: 400;
+  font-size: small;
+  color: #FFFFFF;
+}
+
+.message-chat button {
+  all: unset;
+  background-color: #042739;
+  width: 55px;
+  border: 0.5px #042739 solid;
+  border-radius: 10px;
+  box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.message-chat button svg {
+  width: 70%;
+  height: 70%;
+}
+
+.container-message-agent{
+  width: 100%;
+  height: 50%;
+  padding-left: 2.3vw;
+  padding-right: 2.3vw;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: end;
+}
+
+.bubble {
+  width: 55px;
+  height: 45px;
+  display: flex;
+  padding: 3px;
+  justify-content: center;
+  align-items: center;
+  background-color: #042739;
+  border: 0.5px #042739 solid;
+  border-radius: 10px;
+  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.5);
+
+}
+
+.figure-mini {
+  display: flex;
+  justify-content: space-evenly;
+  width: 36px;
+  height: 25px;
+  border: 2.5px #FFFFFF solid;
+  border-radius: 80vh;
+  box-shadow: 0px 0px 1px 0px #ffffff;
+}
+
+.eye-mini {
+  align-self: center;
+  width: 20%;
+  border-radius: 50vh;
+  background-color: #FFFFFF;
+  border: 5px #FFFFFF solid;
+  border-radius: 80vh;
+  box-shadow: 0px 0px 20px 0px #ffffff;
+  animation-name: eyes;
+  animation-duration: 0.6s;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+.bubble-response {
+  width: 100%;
+  height: 100px;
+  background-color: #042739;
+  border: 0.5px #042739 solid;
+  border-radius: 10px;
+  box-shadow: 1px 4px 5px rgba(0, 0, 0, 0.5);
+}
+
 
 @media (max-width: 720px) {
   .text {
@@ -53,6 +286,7 @@ body {
 }
 
 @media (max-width: 350px) {
+
   .tip,
   .actions {
     display: none;
