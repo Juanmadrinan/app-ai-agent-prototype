@@ -1,4 +1,4 @@
-
+import { Chat } from "./Chat"
 function App() {
   // const ipcHandle = () => window.electron.ipcRenderer.send('ping')
 
@@ -25,29 +25,15 @@ function App() {
           </div>
         </div>
         <div className="container-chat">
-          <div className="container-message-agent">
-            <div className="bubble">
-              <div className="figure-mini">
-                <div className="eye-mini"></div>
-                <div className="eye-mini"></div>
-              </div>
-            </div>
-            <div className="bubble-response">
-              <div><p></p></div>
-            </div>
-          </div>
           <div className="container-message-chat">
             <div className="message-chat">
-              <form>
+              {/* <form>
                 <div className="chat">
-                  <input type="text" name="chat-message" placeholder="Talk to me ..."></input>
+                  <Chat></Chat>
                 </div>
-                <button>
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="transparent" viewBox="0 0 24 24" stroke="#ffffff">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
-                  </svg>
-                </button>
-              </form>
+                <button onSubmit={handleClick}></button>
+              </form> */}
+              <Chat></Chat>
             </div>
           </div>
         </div>
